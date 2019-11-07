@@ -120,22 +120,22 @@ class GameViewController: UIViewController, SCNSceneRendererDelegate {
         for aliveCell in aliveCells {
             aliveCell.chanceCellState(state: true)
 
-//            let copy = aliveCell.copy()
-//            cellCopy.append(copy as! CellView)
-//            aliveCell.position.z = zPos
+            let copy = aliveCell.copy()
+            cellCopy.append(copy as! CellView)
+            aliveCell.position.z = zPos
         }
 
         for deadCell in deadCells {
             deadCell.chanceCellState(state: false)
         }
         
-//        for cell in cellCopy {
-//            cell.chanceCellState(state: false)
-//            cell.position.z = zPos - 0.8
-//            scene?.rootNode.addChildNode(cell.cellNode)
-//        }
+        for cell in cellCopy {
+            cell.chanceCellState(state: false)
+            cell.position.z = zPos - 0.8
+            scene?.rootNode.addChildNode(cell.cellNode)
+        }
         
-//        zPos+=0.8
+        zPos+=0.8
     }
     
     func clearAll(){

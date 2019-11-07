@@ -9,7 +9,7 @@
 import Foundation
 import SceneKit
 
-class CellView: Cell{
+class CellView: Cell, NSCopying{
 
     var cellNode: CellNode
     var body: SCNBox
@@ -22,7 +22,7 @@ class CellView: Cell{
     
     init(x: Int, y: Int, xPosition: Int, yPosition: Int ) {
         
-        self.body = SCNBox(width: 1, height: 1, length: 0, chamferRadius: 0.0)
+        self.body = SCNBox(width: 1, height: 1, length: 1, chamferRadius: 0.0)
         self.cellNode = CellNode()
         self.cellNode.geometry = body
         self.isAlive = false
@@ -43,8 +43,8 @@ class CellView: Cell{
         }
     }
     
-//    func copy(with zone: NSZone? = nil) -> Any {
-//        let copy = CellView(x: x, y: y, xPosition: Int(position.x), yPosition: Int(position.y))
-//        return copy
-//      }
+    func copy(with zone: NSZone? = nil) -> Any {
+        let copy = CellView(x: x, y: y, xPosition: Int(position.x), yPosition: Int(position.y))
+        return copy
+      }
 }
