@@ -22,7 +22,7 @@ class CellView: Cell, NSCopying{
     
     init(x: Int, y: Int, xPosition: Int, yPosition: Int ) {
         
-        self.body = SCNBox(width: 1, height: 1, length: 1, chamferRadius: 0.0)
+        self.body = SCNBox(width: 1, height: 1, length: 1, chamferRadius: 0.2)
         self.cellNode = CellNode()
         self.cellNode.geometry = body
         self.isAlive = false
